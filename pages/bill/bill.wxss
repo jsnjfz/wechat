@@ -1,0 +1,23 @@
+/**index.wxss**/
+@import '../../style/weui.wxss';
+
+.bill-tags { padding: 10px 0; text-align: center; position: relative; }
+.tabs>wx-view { display: inline-block; width: 80px; height: 25px; font-size: 14px; color: #778087; border: 1px solid #778087; line-height: 25px; box-sizing: content-box; }
+.addbill { position: absolute; height: 100%; right: 15px; top: 0; line-height: 48px; font-size: 14px; }
+.addbill::before{ content: ''; display: inline-block; width: 16px; height: 100%; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB3UlEQVRoQ+1agVHDMAz8TgBMAp0AmAA2ACZATABs8BvQTkA3ACag3YBOABvAKci9XK6kcRy1SbHvernrybJeL9uy5RGsicgZgFsA+j0M/zt+H0k+pOofqQIRuQbwlKostj/JYvyUNjLPv1SULAB8pShu0HdCctJArlZEAcwAXJjUVAkh6W18qt2r/grgu6TtaEjGq91lAAuSJ525ZkuKygDeSOoKNKiWAeyarsxAHQMiUiwKJOdeTLkxICKXAJ7N8HOSrx4gPAFonnNvRneS96xzQAbwV1iIiBsDpvsKwHSQDIiIzqfTairR6U7szEAGsHFFzAzUuCjPgY3x83vO9lxG201iSw+OmwCw241wvtABm6YSuhrWyrYKIUvM3hsanyo2rksA/ycAdaldwTQ9dqpcsVsCeIsIodmm9LsVA7Ex0ctJHAMiA8gbWUy8rJHNIZRDKIdQD5O5GFL2YRJrKhEqP7XJWYxjLKVpl063GMjlanEruVAs2Bj5DCDGWx6ye8vAnOTYw2Nd6xSRz/CaYHBlVhHRZxAKQNuyWujWyvldX2vFZrwWTcKxtridLm84ge0PAPrrU9M9pfoIZbzTxx6J3rnRtxar1yLGhL5a0drWQaJyr+5Lu91guLn4AZIxzFTgb06QAAAAAElFTkSuQmCC) no-repeat center; background-size: 16px 16px; vertical-align: top; margin-right: 4px; }.notpay { border-radius: 4px 0 0 4px; border-right: none; }
+.payed { border-radius: 0 4px 4px 0; border-left: none; }
+.active wx-view { background-color: #778087; color: #fff; }
+.panel { box-sizing: border-box; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch; }
+.bank-cont { display: flex; align-items: center; padding: 8px 15px !important; }
+.bank-logo { width: 32px; height: 32px; margin-right: 0.5em; vertical-align: middle; }
+.bank-info { width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.bank-name { font-size: 12px; color: #000; }
+.debt-detail { width: 100%; }
+.debt-item { text-align: center; }
+.weui-loadmore_line { margin-top: 1em; }
+.weui-loadmore { margin: 1em auto -1em; }
+.bill-money { font-size: 30px; color: #dc143c; }
+.debt-item wx-text { color: #999; font-size: 14px; }
+.debt-info { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; margin-top: 10px; }
+.debt-info wx-text { font-size: 16px; }
+.add-panel { height: 80px; text-align: center; line-height: 80px; font-size: 25px; }

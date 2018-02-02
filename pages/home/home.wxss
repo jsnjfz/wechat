@@ -1,0 +1,22 @@
+@import '../../style/weui.wxss'; 
+
+.weui-search-bar { border-top: 0; }
+.panel { background-color: #fff; padding: 10px 0; margin-bottom: 10px; }
+.title { border-left: 5px solid #09bb07; display: flex; justify-content: space-between; padding: 0 5px; color: #09bb07; margin-bottom: 10px; }
+.hot-cards { width: 100%; white-space: nowrap; }
+.hot-cards .item { display: inline-block; width: 44%; height: 100%; margin-left: ",20,"; vertical-align: middle; }
+.hot-cards .item wx-image { width: ",326,"; height: ",208,"; }
+.hot-cards .item wx-view { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hot-cards .name { font-size: 12px; color: #000; }
+.hot-cards .des { font-size: 10px; color: #999; }
+.hot-theme { display: flex; flex-wrap: wrap; }
+.hot-theme .item { width: 20%; text-align: center; margin-bottom: 20px; }
+.hot-theme .item wx-image { width: 32px; height: 32px; }
+.hot-theme .item wx-view { font-size: 12px; }
+.hot-app { padding: 0 12px; }
+.app-item { padding: 12px 0; display: flex; height: 88px; }
+.app-item>wx-view { height: 100%; }
+.app-item .logo { margin-right: 8px; }
+.app-item wx-image { width: 64px; height: 64px; border-radius: 8px; }
+.des { height: 100%; font-size: 16px; color: #333; }
+.des wx-text { color: #9b9a9b; font-size: 10px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }

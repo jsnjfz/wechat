@@ -1,0 +1,59 @@
+<page>
+  <view class="page">
+    <navigator class="weui-search-bar" url="/pages/search/search">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon type="search" size="14" class="weui-icon-search_in-box"></icon>
+          <input class="weui-search-bar__input" placeholder="搜索" type="text"></input>
+        </view>
+        <label class="weui-search-bar__label">
+          <icon type="search" size="14" class="weui-icon-search"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+    </navigator>
+    <view class="content">
+      <view class="panel">
+        <view class="title">
+          <text>热门卡片</text>
+          <navigator url="/pages/theme/theme?id=1&name=热门卡片">更多></navigator>
+        </view>
+        <scroll-view scrollX="true" class="hot-cards">
+          <block wx:for-items="{{hotCards}}">
+            <navigator hoverClass="none" class="item" url="/pages/cardinfo/cardinfo?id={{item.cardInfoId}}&bid={{item.bid}}">
+              <image src="{{item.cardInfoLogo}}"></image>
+              <view class="name">{{item.cardInfoName}}</view>
+              <view class="des">{{item.cardInfoDesRed}}</view>
+            </navigator>
+          </block>
+        </scroll-view>
+      </view>
+      <view class="panel">
+        <view class="title">
+          <text>热门专题</text>
+        </view>
+        <view class="hot-theme">
+          <block wx:for-items="{{hotTheme}}">
+            <navigator hoverClass="none" data-item="item" class="item" url="/pages/theme/theme?id={{item.id}}&name={{item.name}}">
+              <image src="{{item.logo}}"></image>
+              <view>{{item.name}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+      <view class="panel">
+        <view class="title">
+          <text>所有银行</text>
+        </view>
+        <view class="hot-theme">
+          <block wx:for-items="{{allBanks}}">
+            <navigator hoverClass="none" class="item" url="/pages/bank/bank?bankId={{item.id}}">
+              <image src="{{item.antIcon}}"></image>
+              <view>{{item.name}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</page>

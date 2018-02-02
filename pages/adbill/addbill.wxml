@@ -1,0 +1,42 @@
+<page>
+  <view class="weui-toptips {{icon?'weui-toptips_+icon':'weui-toptips_cancel'}} {{animateCss}} {{className}}" hidden="!visible">
+    {{text}}
+    <icon class="weui-toptips_icon" color="#fff" size="24" type="{{icon}}"></icon>
+  </view>
+  <view class="page">
+    <form bindsubmit="addBill" reportSubmit="true">
+      <view class="weui-cells__title">编辑卡片信息</view>
+      <view class="weui-cells weui-cells_after-title">
+        <navigator class="weui-cell" hoverClass="weui-cell_active" url="/pages/mycardlist/mycardlist">
+          <view class="weui-cell__hd">
+            <view class="weui-label">选择卡片</view>
+          </view>
+          <view class="weui-cell__bd card-name">{{obj.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">还款日</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindDateChange" end="{{end}}" mode="date" start="{{start}}" value="{{dateVal}}">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">账单金额</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="getInput" placeholder="请输入账单金额" type="digit"></input>
+          </view>
+        </view>
+      </view>
+      <view class="btn-group">
+        <button formType="submit" size="default" type="primary"> 保存 </button>
+      </view>
+    </form>
+  </view>
+</page>

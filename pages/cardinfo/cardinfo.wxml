@@ -1,0 +1,179 @@
+<page>
+  <view class="page">
+    <view class="brief-info">
+      <image src="{{cardinfo.antImg}}"></image>
+      <view class="card-name dot">{{cardinfo.name}}</view>
+      <view class="des">{{cardinfo.tese}}</view>
+      <view class="basic-info dot">
+        <text>{{cardinfo.org}}<text class="dash">/</text>{{cardinfo.orgs}}</text>
+        <text>{{cardinfo.level}}</text>
+        <text>年费: {{cardinfo.annualFee}}元 {{cardinfo.nianfree}}</text>
+      </view>
+      <navigator class="err" url="/pages/postcarderror/postcarderror?cid={{cid}}&name={{cardinfo.name}}"></navigator>
+    </view>
+    <view class="space"></view>
+    <view class="tabs">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for-items="{{tabs}}">
+            <view id="0" bindtap="tabClick" class="weui-navbar__item {{activeIndex==0?'weui-bar__item_on':''}}">
+              <view class="weui-navbar__title">item</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view hidden="activeIndex!=0" class="tab-content">
+            <block wx:for-items="{{rightsData}}">
+              <view class="rights-item">
+                <view class="tag-name">
+                  <image src="{{item.dictType.logo}}"></image>
+                  <text>{{item.dictType.name}}</text>
+                </view>
+                <view class="rights-ul">
+                  <block wx:for-items="{{rightsData.equityIemsList}}">
+                    <navigator class="rights-li" url="/pages/rights/rights?id={{item.id}}">
+                      <text>{{item.name}}</text>
+                      <text>item.worth+item.unit</text>
+                    </navigator>
+                  </block>
+                </view>
+              </view>
+            </block>
+            <view class="no-data">~权益正在赶来的路上~</view>
+            <view class="btn-group">
+              <view hoverClass="active" bindtap="doihave" class="btn1 {{own?'has':'had'}}">
+                <text>{{btnTxt}}</text>
+              </view>
+              <navigator hoverClass="active" class="btn2" url="/pages/qrcode/qrcode?url={{ad.linkShort}}&bankName={{cardinfo.name}}">
+                <text>立即办卡</text>
+                <view class="tip">{{ad.des}}</view>
+              </navigator>
+            </view>
+          </view>
+          <view hidden="activeIndex!=1" class="tab-content">
+            <view class="points-item">
+              <text>积分规则</text>
+              <view class="rich-text">
+                <block wx:for-items="{{pointsData.ruleList}}">
+                  <view class="">{{item.content}}</view>
+                </block>
+              </view>
+            </view>
+            <view class="points-item">
+              <text>积分活动</text>
+              <view class="rich-text">
+                <block wx:for-items="{{pointsData.activityList}}">
+                  <view class="">{{item.content}}</view>
+                </block>
+              </view>
+            </view>
+            <view class="points-item">
+              <text>生日活动</text>
+              <view class="rich-text">
+                <block wx:for-items="{{pointsData.birthdayList}}">
+                  <view class="">{{item.content}}</view>
+                </block>
+              </view>
+            </view>
+            <view class="points-item">
+              <text>其它</text>
+              <view class="rich-text">
+                <block wx:for-items="{{others.nodes}}">
+                  <button type="default" size="mini">
+                    <block wx:for-items="{{others.nodes.nodes}}">
+                      <button type="default" size="mini">
+                        <block wx:for-items="{{others.nodes.nodes.nodes}}">
+                          <button type="default" size="mini">
+                            <block wx:for-items="{{others.nodes.nodes.nodes.nodes}}">
+                              <button type="default" size="mini">
+                                <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes}}">
+                                  <button type="default" size="mini">
+                                    <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                      <button type="default" size="mini">
+                                        <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                          <button type="default" size="mini">
+                                            <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                              <button type="default" size="mini">
+                                                <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                  <button type="default" size="mini">
+                                                    <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                      <button type="default" size="mini">
+                                                        <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                          <button type="default" size="mini">
+                                                            <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                              <button type="default" size="mini">
+                                                                <block wx:for-items="{{others.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                              </button>
+                                                            </block>
+                                                          </button>
+                                                        </block>
+                                                      </button>
+                                                    </block>
+                                                  </button>
+                                                </block>
+                                              </button>
+                                            </block>
+                                          </button>
+                                        </block>
+                                      </button>
+                                    </block>
+                                  </button>
+                                </block>
+                              </button>
+                            </block>
+                          </button>
+                        </block>
+                      </button>
+                    </block>
+                  </button>
+                </block>
+              </view>
+            </view>
+            <view class="points-item">
+              <text>线上支付</text>
+              <block wx:for-items="{{pay}}">
+                <view class="online-pay">
+                  <text>{{item.name}}</text>
+                  <text>{{item.value}}</text>
+                </view>
+              </block>
+            </view>
+            <view class="points-item">
+              <text>积分兑换</text>
+              <block wx:for-items="{{pointsData.useList}}">
+                <view class="rights-item">
+                  <view class="tag-name">
+                    <image src="{{itemName.dictType.logo}}"></image>
+                    <text>{{itemName.dictType.name}}</text>
+                  </view>
+                  <view class="points-ul">
+                    <block wx:for-items="{{pointsData.useList.useList}}">
+                      <view class="points-li">
+                        <text>item.exchangeScoreIn+分=+item.exchangeScoreOut+item.exchangeObject</text>
+                      </view>
+                    </block>
+                    <block wx:for-items="{{pointsData.useList.useList}}">
+                      <view class="points-li">
+                        <text>{{item.mark}}</text>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+          <view hidden="activeIndex!=2" class="tab-content">
+            <block wx:for-items="{{tipsData}}">
+              <navigator class="tip-item" url="/pages/tip/tip?id={{item.id}}">
+                <view>{{item.title}}</view>
+                <text>{{item.des}}</text>
+              </navigator>
+            </block>
+            <view class="no-data">~攻略正在赶来的路上~</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</page>

@@ -1,6 +1,0 @@
-/**index.wxss**/
-@import '../../style/newweui.wxss';
-
-.notpay { border-radius: 4px 0 0 4px; border-right: none; }
-.addbill { position: absolute; height: 100%; right: 15px; top: 0; line-height: 48px; font-size: 14px; }
-.addbill::before{ content: \x27\x27; display: inline-block; width: 16px; height: 100%;  background-size: 16px 16px; vertical-align: top; margin-right: 4px; }

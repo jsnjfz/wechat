@@ -1,0 +1,11 @@
+<page>
+  <view class="page">
+    <view class="textarea-wrp">
+      <textarea autoHeight="true" bindfocus="getClip" bindinput="updateSms" placeholder="粘贴短信到此处将自动识别并添加账单" value="{{sms}}"></textarea>
+    </view>
+    <view class="btns">
+      <button type="warn" bindtap="reset">清空</button>
+      <button bindtap="submit" type="primary" loading="{{loading}}">识别</button>
+    </view>
+  </view>
+</page>

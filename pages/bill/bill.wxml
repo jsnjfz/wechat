@@ -1,8 +1,8 @@
 
-  <view class="weui-mask {{animateCss}}"></view>
+  <!--<view class="weui-mask {{animateCss}}"></view>
   <view class="weui-dialog {{animateCss}}">
     <view class="weui-dialog__hd">
-      <view class="weui-dialog__title">'666'</view>
+      <view class="weui-dialog__title">{{title}}</view>
     </view>
     <view class="weui-dialog__bd">
       <view class="weui-dialog__content">{{content}}</view>
@@ -14,14 +14,14 @@
         <view bindtap="{{buttonTapped}}" class="weui-dialog__btn weui-dialog__btn_default {{item.type}} {{item.bold?'weui-dialog__btn_bold':''}}" data-index="{{index}}">{{item.text}}</view>
       </block>
     </view>
-  </view>
+  </view>-->
   <view class="page">
     <view class="bill-tags">
       <view class="tabs">
-        <view bindtap="tabClick" id="0" class="notpay">
+        <view bindtap="tabClick" id="0" class="notpay {{activeIndex==0?'active':''}}">
           <view class="">待还</view>
         </view>
-        <view bindtap="tabClick" id="1" class="payed">
+        <view bindtap="tabClick" id="1" class="payed {{activeIndex==1?'active':''}}">
           <view class="">已还</view>
         </view>
       </view>

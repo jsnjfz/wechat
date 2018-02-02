@@ -1,0 +1,67 @@
+<!--$gwx("./pages/cardinfo/cardinfo.wxml")(); -->
+<page>
+  <view class="weui-mask {{animateCss}}"></view>
+  <view class="weui-dialog {{animateCss}}">
+    <view class="weui-dialog__hd">
+      <view class="weui-dialog__title">{{title}}</view>
+    </view>
+    <view class="weui-dialog__bd">
+      <view class="weui-dialog__content">{{content}}</view>
+      <input bindinput="{{bindinput}}" class="weui-input weui-prompt-input" maxlength="{{maxlength}}" password="{{prompt.password}}" placeholder="{{prompt.placeholder}}" type="{{prompt.fieldtype}}" value="{{prompt.response}}"></input>
+      <view class="surfix">{{surfix}}</view>
+    </view>
+    <view class="weui-dialog__ft {{verticalButtons?'weui-dialog__btns_vertical':''}}">
+      <block wx:for-items="{{buttons}}">
+        <view bindtap="{{buttonTapped}}" class="weui-dialog__btn weui-dialog__btn_default {{item.type}} {{item.bold?'weui-dialog__btn_bold':''}}" data-index="{{index}}">{{item.text}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="page">
+    <scroll-view scrollX="true" class="tags-box">
+      <block wx:for-items="{{tags}}">
+        <view bindtap="tagClick" class="{{item.id==activeIndex?'on':''}}" bindlongtap="longTap" id="{{item.id}}">{{item.name}}</view>
+      </block>
+      <view bindtap="add">+</view>
+    </scroll-view>
+    <block wx:for-items="{{datas}}">
+      <view class="weui-panel">
+        <view class="weui-panel__hd bank-cont">
+          <navigator class="" url="">
+            <image class="bank-logo" src="{{item.dictBank.antIcon}}!w38"></image>
+          </navigator>
+          <view class="weui-media-box__bd  bank-info">
+            <text class="bank-name">{{item.dictBank.name}}</text>
+            <view class="bank-detail">
+              <text>{{item.dictBank.cardNum}}张 | ￥{{item.dictBank.totalAmount}}</text>
+              <text>账单:{{item.dictBank.statementDate}}日/还款:{{item.dictBank.repaymentDate}}日/免息:{{item.dictBank.interestHliDay}}天</text>
+            </view>
+          </view>
+        </view>
+        <view class="weui-panel__bd">
+          <block wx:for-items="{{datas.userBankVOList}}">
+            <view class="weui-media-box weui-media-box_appmsg card-cont">
+              <view class="card-pic" data-obj="item" bindtap="goCardInfo">
+                <image class="weui-media-box__thumb" src="{{item.logo}}!w38"></image>
+              </view>
+              <navigator hoverClass="none" class="weui-media-box__bd card-detail" url="/pages/carddetail/carddetail?id={{item.id}}">
+                <view class="weui-media-box__title card-name">{{item.name}}</view>
+                <view class="card-tags">
+                  <text hidden="item.level==">{{item.level}}</text>
+                  <text hidden="item.org==">{{item.org}}</text>
+                  <text hidden="item.org2==">{{item.org2}}</text>
+                  <text hidden="item.packetName==" style="color:coral">{{item.packetName}}</text>
+                  <image src="{{bell}}" hidden="item.remind==0" style="width: 16px;height: 16px;"></image>
+                  <text class="des">{{item.des}}</text>
+                </view>
+                <text class="card-num">**** **** **** {{item.cardNo}}</text>
+              </navigator>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    <navigator class="weui-panel add-panel" url="/pages/addcard/addcard">
+      <view>+ 添加卡片</view>
+    </navigator>
+  </view>
+</page>

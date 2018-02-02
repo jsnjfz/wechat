@@ -1,10 +1,12 @@
-//index.js
 //获取应用实例
 const app = getApp()
 
-var t = require("../../components/wux"),
-  a = require("../../utils/http.js"),
-  e = require("../../img/base64");
+// var t = require("../../components/wux"),
+//   a = require("../../utils/http.js"),
+//   e = require("../../img/base64");
+require("../../components/wux")
+require("../../utils/http.js")
+require("../../img/base64")
 
 Page({
   data: {

@@ -1,0 +1,7 @@
+/**index.wxss**/
+@import '../../style/weui.wxss';
+
+wx-textarea { width: ",700,"; padding: ",25," 0; min-height: 200px; }
+.textarea-wrp { padding: 0 ",25,"; background-color: #fff; }
+.btns { text-align: center; }
+wx-button { width: 30%; display: inline-block; margin: ",30,"; }

@@ -1,0 +1,21 @@
+ @import '../../style/newweui.wxss'; 
+
+.tags-box { padding: 8px 0; white-space: nowrap; background-color: #f8f8f8; margin-bottom: -10px; }
+.tags-box wx-view { border-radius: 4px; box-shadow: 1px 1px 1px #e2e2e2; color: #a0a0a0; line-height: 28px; display: inline-block; font-size: 14px; padding: 0 12px; background-color: #fff; margin: 0 5px; }
+.tags-box wx-view.on { border-bottom: 2px solid #778087; }.tags-box wx-view:last-child { margin-right: 10px; }
+.bank-cont { display: flex; align-items: center; padding: 8px 15px !important; }
+.bank-logo { width: 32px; height: 32px; margin-right: 0.5em; vertical-align: middle; }
+.bank-detail { width: 100%; display: flex; justify-content: space-between; font-size: 10px; }
+.bank-info { width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.bank-name { font-size: 12px; color: #000; }
+.card-cont { padding: 8px 15px !important; }
+.card-pic { width: 88px; height: 56px; margin-right: 0.5em; }
+.card-pic wx-image { width: 88px; height: 56px; border-radius: 6px; border: ",1," solid #eee; }
+.card-detail { line-height: 1.3; color: #000; flex: 1; min-width: 0; overflow: hidden; }
+.card-name { font-size: 15px; }
+.card-tags wx-text { color: #666; font-size: 12px; margin-right: 6px; }
+.card-tags .des { margin-left: 6px; }
+.card-tags { display: flex; align-items: center; }
+.card-num { float: right; }
+.add { position: fixed; width: 35px; height: 35px; background-color: #666; border-radius: 50%; right: 15px; bottom: 15px; text-align: center; line-height: 35px; font-size: 30px; color: #fff; box-sizing: border-box; }
+.add-panel { height: 80px; text-align: center; line-height: 80px; font-size: 25px; }
