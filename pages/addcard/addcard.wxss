@@ -1,0 +1,4 @@
+@import '../../style/weui.wxss';
+button { margin-top: ",30,"; margin-bottom: ",30,"; }
+.btn-group { box-sizing: border-box; width: 100%; padding: 0 ",30,"; }
+.card-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

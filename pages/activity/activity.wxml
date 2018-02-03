@@ -1,2 +1,101 @@
-<!--pages/activity/activity.wxml-->
-<text>pages/activity/activity.wxml</text>
+<page>
+  <view class="page">
+    <view class="act-tags">
+      <view class="tabs">
+        <view bindtap="tabClick" class="today {{activeIndex==0?'active':''}}" id="0">
+          <view class="">今日</view>
+        </view>
+        <view bindtap="tabClick" class="mine {{activeIndex==1?'active':''}}" id="1">
+          <view class="">关注</view>
+        </view>
+        <view bindtap="tabClick" class="all {{activeIndex==2?'active':''}}" id="2">
+          <view class="">发现</view>
+        </view>
+      </view>
+      <switch bindchange="seeMy" hidden="activeIndex!=2" type="switch"></switch>
+    </view>
+    <view class="container" hidden="activeIndex==2">
+      <view class="filter-wp">
+        <view class="filter">
+          <picker value="{{index}}" bindchange="switchBank" range="{{bankData}}" rangeKey="name">
+            <view class="picker">{{bankName}}</view>
+          </picker>
+          <picker value="{{index}}" rangeKey="name" bindchange="switchType" class="mid" range="{{typeData}}">
+            <view class="picker">{{actType}}</view>
+          </picker>
+          <picker value="{{index}}" rangeKey="name" bindchange="switchStates" range="{{statesData}}">
+            <view class="picker">{{states}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="act-list">
+        <view class="no-data">
+          <view>~空空如也~</view>
+          <view bindtap="gofind" class="gofind" hoverClass="active">去发现更多</view>
+        </view>
+        <block wx:for-items="{{myLists}}">
+          <view class="myact">
+            <view class="time">{{item.time}}</view>
+            <view class="classname"></view>
+            <block wx:for-items="{{myLists.bankActiveVO}}">
+              <view class="act-item {{item.states==1?'opacity':''}}">
+                <navigator class="link" hoverClass="none" url="/pages/actinfo/actinfo?id={{item.bankActiveId}}&bankId={{item.bankId}}">
+                  <view class="img">
+                    <image src="{{item.bankLogo}}"></image>
+                  </view>
+                  <view class="des">
+                    <view class="title">{{item.title}}</view>
+                    <view class="titlered">{{item.titleRed}}</view>
+                    <view class="remindTime">
+                      <view>{{item.remindDes}}</view>
+                      <image src="{{bell}}" class="{{item.remind==0?'gray':''}}"></image>
+                    </view>
+                  </view>
+                </navigator>
+                <view class="check">
+                  <checkbox-group bindchange="checkboxChange">
+                    <checkbox bindtap="checking" checked="item.states==1" data-id="{{item.id}}" value="{{item.id}}"></checkbox>
+                  </checkbox-group>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view hidden="activeIndex!=2" class="container">
+      <view class="filter-wp">
+        <view class="filter">
+          <picker value="{{index}}" range="{{bankData}}" rangeKey="name" bindchange="switchBank1">
+            <view class="picker">{{bankName1}}</view>
+          </picker>
+          <picker value="{{index}}" rangeKey="name" class="mid" range="{{typeData}}" bindchange="switchType1">
+            <view class="picker">{{actType1}}</view>
+          </picker>
+          <picker value="{{index}}" rangeKey="name" bindchange="switchOrder" range="{{orderData}}">
+            <view class="picker">{{order}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="act-list">
+        <view class="no-data">~空空如也~</view>
+        <block wx:for-items="{{allLists}}">
+          <navigator class="act-item all" url="/pages/actinfo/actinfo?id={{item.id}}&bankId={{item.bankId}}">
+            <view class="img">
+              <image src="{{item.bankLogo}}"></image>
+            </view>
+            <view class="des">
+              <view class="title">{{item.title}}</view>
+              <view class="titlered">{{item.titleRed}}</view>
+              <view class="remindTime">
+                <view>{{item.startTime}}-{{item.endTime}}</view>
+                <view>{{item.remindDes}}</view>
+                <image src="{{bell}}" class="gray"></image>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</page>

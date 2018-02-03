@@ -1,0 +1,3 @@
+body { background-color: #fff; padding-bottom: 30px; }
+.btns { padding: 0 10px; }
+wx-button { margin-bottom: 10px; }

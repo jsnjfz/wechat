@@ -1,0 +1,10 @@
+@import '../../style/weui.wxss';
+
+.logo { width: 46px; height: 46px; margin-right: 5px; }
+.logo wx-image { width: 46px; height: 46px; }
+.text-wp { display: flex; width: 100%; justify-content: space-between; height:46px; }
+.mid, .end { display: flex; flex-direction: column; justify-content: space-between; }
+.mid wx-view, .end wx-view { font-size: 16px; }
+.mid wx-text { font-size: 14px; color: #666; white-space: nowrap; }
+.end wx-text { color: green; font-size: 12px; }
+.no-data { padding-top: 60px; text-align: center; font-size: 14px; color: #b8b8b8; }

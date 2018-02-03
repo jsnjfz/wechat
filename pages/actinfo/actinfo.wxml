@@ -1,0 +1,220 @@
+<page>
+  <view class="page">
+    <view class="act-item">
+      <view class="img">
+        <image src="{{datas.bankLogo}}"></image>
+      </view>
+      <view class="des">
+        <view class="title">{{datas.title}}</view>
+        <view class="titlered">{{datas.titleRed}}</view>
+        <view class="remindTime">
+          <view>{{datas.startTime}}-{{datas.endTime}}</view>
+          <view>{{datas.remindDes}}</view>
+          <image class="{{isRemind?'greenbell':''}}" src="{{bell}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <view bindtap="flow" class="flow nflow {{sub==1?'flowed':''}}"></view>
+    </view>
+    <view class="panel remind {{sub==1?'toggle':''}}">
+      <view class="title">
+        <text>提醒我</text>
+        <switch bindchange="remindMe" checked="{{isRemind}}"></switch>
+      </view>
+      <view class="rich-text">提示：关注公众号
+        <text bindtap="alert" class="wankadi">「wannimei」</text> 即可在活动前收到通知，不落下一根羊毛哦~</view>
+    </view>
+    <view class="panel">
+      <view class="title">活动内容</view>
+      <view class="rich-text">
+        <block wx:for-items="{{content.nodes}}">
+          <button type="default" size="mini">
+            <block wx:for-items="{{content.nodes.nodes}}">
+              <button type="default" size="mini">
+                <block wx:for-items="{{content.nodes.nodes.nodes}}">
+                  <button type="default" size="mini">
+                    <block wx:for-items="{{content.nodes.nodes.nodes.nodes}}">
+                      <button type="default" size="mini">
+                        <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes}}">
+                          <button type="default" size="mini">
+                            <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                              <button type="default" size="mini">
+                                <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                  <button type="default" size="mini">
+                                    <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                      <button type="default" size="mini">
+                                        <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                          <button type="default" size="mini">
+                                            <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                              <button type="default" size="mini">
+                                                <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                  <button type="default" size="mini">
+                                                    <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                      <button type="default" size="mini">
+                                                        <block wx:for-items="{{content.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                      </button>
+                                                    </block>
+                                                  </button>
+                                                </block>
+                                              </button>
+                                            </block>
+                                          </button>
+                                        </block>
+                                      </button>
+                                    </block>
+                                  </button>
+                                </block>
+                              </button>
+                            </block>
+                          </button>
+                        </block>
+                      </button>
+                    </block>
+                  </button>
+                </block>
+              </button>
+            </block>
+          </button>
+        </block>
+      </view>
+    </view>
+    <view class="panel">
+      <view class="title">活动规则</view>
+      <view class="rich-text">
+        <block wx:for-items="{{regulation.nodes}}">
+          <button type="default" size="mini">
+            <block wx:for-items="{{regulation.nodes.nodes}}">
+              <button type="default" size="mini">
+                <block wx:for-items="{{regulation.nodes.nodes.nodes}}">
+                  <button type="default" size="mini">
+                    <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes}}">
+                      <button type="default" size="mini">
+                        <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes}}">
+                          <button type="default" size="mini">
+                            <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                              <button type="default" size="mini">
+                                <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                  <button type="default" size="mini">
+                                    <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                      <button type="default" size="mini">
+                                        <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                          <button type="default" size="mini">
+                                            <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                              <button type="default" size="mini">
+                                                <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                  <button type="default" size="mini">
+                                                    <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                      <button type="default" size="mini">
+                                                        <block wx:for-items="{{regulation.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                      </button>
+                                                    </block>
+                                                  </button>
+                                                </block>
+                                              </button>
+                                            </block>
+                                          </button>
+                                        </block>
+                                      </button>
+                                    </block>
+                                  </button>
+                                </block>
+                              </button>
+                            </block>
+                          </button>
+                        </block>
+                      </button>
+                    </block>
+                  </button>
+                </block>
+              </button>
+            </block>
+          </button>
+        </block>
+      </view>
+    </view>
+    <view class="panel">
+      <view class="title">谈姿势</view>
+      <view class="rich-text">
+        <block wx:for-items="{{howPlay.nodes}}">
+          <button type="default" size="mini">
+            <block wx:for-items="{{howPlay.nodes.nodes}}">
+              <button type="default" size="mini">
+                <block wx:for-items="{{howPlay.nodes.nodes.nodes}}">
+                  <button type="default" size="mini">
+                    <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes}}">
+                      <button type="default" size="mini">
+                        <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes}}">
+                          <button type="default" size="mini">
+                            <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                              <button type="default" size="mini">
+                                <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                  <button type="default" size="mini">
+                                    <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                      <button type="default" size="mini">
+                                        <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                          <button type="default" size="mini">
+                                            <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                              <button type="default" size="mini">
+                                                <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                  <button type="default" size="mini">
+                                                    <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                      <button type="default" size="mini">
+                                                        <block wx:for-items="{{howPlay.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                      </button>
+                                                    </block>
+                                                  </button>
+                                                </block>
+                                              </button>
+                                            </block>
+                                          </button>
+                                        </block>
+                                      </button>
+                                    </block>
+                                  </button>
+                                </block>
+                              </button>
+                            </block>
+                          </button>
+                        </block>
+                      </button>
+                    </block>
+                  </button>
+                </block>
+              </button>
+            </block>
+          </button>
+        </block>
+      </view>
+    </view>
+    <view class="btns">
+      <navigator class="err" url="/pages/posterror/posterror?name={{datas.bankName}}&title={{datas.title}}&id={{datas.id}}">
+        <image src="{{err}}"></image>
+        <text>活动信息报错</text>
+      </navigator>
+      <navigator url="/pages/postact/postact">
+        <image src="{{cam}}"></image>
+        <text>我要爆料</text>
+      </navigator>
+    </view>
+    <view class="more-act">
+      <view class="title">更多活动</view>
+      <view class="act-list">
+        <block wx:for-items="{{reletives}}">
+          <navigator class="act-item" openType="redirect" url="/pages/actinfo/actinfo?id={{item.id}}&bankId={{item.bankId}}">
+            <view class="img">
+              <image src="{{item.bankLogo}}"></image>
+            </view>
+            <view class="des">
+              <view class="title">{{item.title}}</view>
+              <view class="titlered">{{item.titleRed}}</view>
+              <view class="remindTime">
+                <view>{{item.startTime}}-{{item.endTime}}</view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</page>

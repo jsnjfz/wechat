@@ -1,0 +1,4 @@
+@import '../../style/weui.wxss';
+
+.addmore { color: #586c94; }
+.tips { font-size: 12px; color: #9b9b9b; padding: 5px 15px; }

@@ -1,0 +1,23 @@
+<page>
+  <view class="page">
+    <scroll-view scrollX="true" class="tags-box">
+      <block wx:for-items="{{tags}}">
+        <view bindtap="tagClick" class="{{item.id==activeIndex?'on':''}}" id="{{item.id}}">{{item.name}}</view>
+      </block>
+    </scroll-view>
+    <view class="weui-panel__bd">
+      <block wx:for-items="{{datas}}">
+        <view class="weui-media-box weui-media-box_appmsg card-cont">
+          <view class="card-pic">
+            <image class="weui-media-box__thumb" src="{{item.dictBankCardInfoLogo}}"></image>
+          </view>
+          <navigator hoverClass="none" class="weui-media-box__bd card-detail" url="/pages/annulfeeinfo/annulfeeinfo?id={{item.id}}">
+            <view class="weui-media-box__title card-name">{{item.dictBankCardinfoName}} | {{item.cardNo}}</view>
+            <view class="card-tags">年费{{item.annualFee}}元 · {{item.firstAnnualFeeCondition}} · {{item.des}}</view>
+            <text class="card-num">{{item.annualFeeDateDes}}</text>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+</page>

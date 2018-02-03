@@ -1,0 +1,12 @@
+body { background-color: #fff; }
+.tags-box { padding: 8px 0; white-space: nowrap; background-color: #f8f8f8; }
+.tags-box wx-view { border-radius: 4px; box-shadow: 1px 1px 1px #e2e2e2; color: #a0a0a0; line-height: 28px; display: inline-block; font-size: 14px; padding: 0 12px; background-color: #fff; margin: 0 5px; }
+.tags-box wx-view.on { border-bottom: 2px solid #778087; }
+.tags-box wx-view:last-child { margin-right: 10px; }
+.card-cont { padding: 8px 15px !important; }
+.card-pic { width: 88px; height: 56px; margin-right: 0.5em; }
+.card-pic wx-image { width: 88px; height: 56px; border-radius: 6px; border: ",1," solid #eee; }
+.card-detail { line-height: 1.3; color: #000; flex: 1; min-width: 0; overflow: hidden; }
+.card-name { font-size: 12px; overflow: hidden; text-overflow:ellipsis; white-space: nowrap; }
+.card-tags { color: #9b9b9b; font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-num { font-size: 14px; float: right; }

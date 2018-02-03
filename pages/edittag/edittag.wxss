@@ -1,0 +1,2 @@
+.btns { padding: 10px; }
+wx-button { margin-bottom: 10px; }

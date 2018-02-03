@@ -1,0 +1,69 @@
+<page>
+  <view class="weui-toptips {{icon?'weui-toptips_+icon':'weui-toptips_cancel'}} {{animateCss}} {{className}}" hidden="!visible">
+    {{text}}
+    <icon class="weui-toptips_icon" color="#fff" size="24" type="{{icon}}"></icon>
+  </view>
+  <view class="page">
+    <form reportSubmit="true" bindsubmit="addCard">
+      <view class="weui-cells__title">编辑卡片信息</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">卡号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="getNum" maxlength="4" placeholder="请输入卡号后四位" type="number"></input>
+          </view>
+        </view>
+        <navigator class="weui-cell" hoverClass="weui-cell_active" url="/pages/cardlist/list1/list1">
+          <view class="weui-cell__hd">
+            <view class="weui-label">卡类型</view>
+          </view>
+          <view class="weui-cell__bd card-name">{{name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">账单日</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange0" mode="selector" range="{{days0}}" value="{{billDate}}">
+              <view class="weui-input">{{days0.billDate}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">还款日</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange1" range="{{days1}}" value="{{repayDate}}">
+              <view class="weui-input">{{days1.repayDate}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">额度</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="number" bindinput="getMoney" placeholder="请输入卡额度" value="{{quota}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">备注</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="getDes" placeholder="可填写备注信息"></input>
+          </view>
+        </view>
+      </view>
+      <view class="btn-group">
+        <button formType="submit" size="default" type="primary"> 保存 </button>
+      </view>
+    </form>
+  </view>
+</page>

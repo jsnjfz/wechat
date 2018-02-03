@@ -1,0 +1,22 @@
+<page>
+  <view class="weui-cells" style="margin-top: 0">
+    <block wx:for-items="{{datas}}">
+      <view class="weui-cell">
+        <view class="weui-cell__hd logo">
+          <image src="{{item.bankLogo}}"></image>
+        </view>
+        <view class="text-wp">
+          <view class="vux-cell-bd mid">
+            <view class="">{{item.bankName}}</view>
+            <text class="">{{item.repaydate}}</text>
+          </view>
+          <view class="weui-cell__ft end">
+            <view class="">{{item.amount}}</view>
+            <text class="">{{item.type==1?'已还全部':'已还部分'}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="no-data">暂无还款记录</view>
+</page>

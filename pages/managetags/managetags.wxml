@@ -1,0 +1,17 @@
+<page>
+  <view class="page">
+    <view class="weui-cells__title">卡包管理</view>
+    <view class="weui-cells weui-cells_after-title">
+      <block wx:for-items="{{tags}}">
+        <navigator hoverClass="weui-cell_active" class="weui-cell weui-cell_access" url="/pages/edittag/edittag?id={{item.id}}&name={{item.name}}&states={{item.states}}">
+          <view class="weui-cell__bd">{{item.name}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">{{item.states==2?'默认':''}}</view>
+        </navigator>
+      </block>
+      <navigator hoverClass="weui-cell_active" class="weui-cell weui-cell_access addmore" url="/pages/edittag/edittag">
+        <view class="weui-cell__bd">添加更多</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+  </view>
+</page>

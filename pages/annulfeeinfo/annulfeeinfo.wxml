@@ -1,0 +1,66 @@
+<page>
+  <view class="weui-mask {{animateCss}}"></view>
+  <view class="weui-dialog {{animateCss}}">
+    <view class="weui-dialog__hd">
+      <view class="weui-dialog__title">{{title}}</view>
+    </view>
+    <view class="weui-dialog__bd">
+      <view class="weui-dialog__content">{{content}}</view>
+      <input bindinput="{{bindinput}}" class="weui-input weui-prompt-input" maxlength="{{maxlength}}" password="{{prompt.password}}" placeholder="{{prompt.placeholder}}" type="{{prompt.fieldtype}}" value="{{prompt.response}}"></input>
+      <view class="surfix">{{surfix}}</view>
+    </view>
+    <view class="weui-dialog__ft {{verticalButtons?'weui-dialog__btns_vertical':''}}">
+      <block wx:for-items="{{buttons}}">
+        <view bindtap="{{buttonTapped}}" class="weui-dialog__btn weui-dialog__btn_default {{item.type}} {{item.bold?'weui-dialog__btn_bold':''}}" data-index="{{index}}">{{item.text}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="page">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg card-cont">
+        <view class="card-pic">
+          <image class="weui-media-box__thumb" src="{{datas.dictBankCardInfoLogo}}"></image>
+        </view>
+        <view class="weui-media-box__bd card-detail">
+          <view class="weui-media-box__title card-name">{{datas.dictBankCardinfoName}} | {{datas.cardNo}}</view>
+          <view class="card-tags">年费{{datas.annualFee}}元 · {{datas.firstAnnualFeeCondition}} · {{datas.des}}</view>
+          <text class="card-num">{{datas.annualFeeDateDes}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">年费类型</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker value="{{index}}" rangeKey="name" bindchange="typeChange" range="{{feeType}}">
+            <view class="weui-select">{{feeType.index.name}}</view>
+          </picker>
+        </view>
+      </view>
+      <view bindtap="showAlert" class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">所需条件</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access condition">{{condition}}</view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">日期</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindDateChange" mode="date" disabled="{{dateDisable}}" end="2099-12" fields="month" start="{{now}}" value="{{date}}">
+            <view class="weui-input weui-cell__ft_in-access">{{date}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <text class="tip">
+    卡片有默认的年费类型与所需条件，一般情况下无需更改；
+    年费的收取日期一般为卡片有效期所在月份，如果有不明白的可以咨询对应银行的客服询问；
+    有效期内免年费的收取时间可以直接设置为卡片的有效期；
+  </text>
+    <view class="btn">
+      <button type="primary" bindtap="save">保存</button>
+    </view>
+  </view>
+</page>

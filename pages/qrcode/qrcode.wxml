@@ -1,0 +1,10 @@
+<page>
+  <view class="page">
+    <canvas bindtap="previewImage" canvasId="qrcode" style="width: 250px; height: 280px; margin: 30px auto;"></canvas>
+    <view class="btns">
+      <button type="primary" bindtap="saveQr">保存二维码</button>
+      <button bindtap="copyUrl">复制链接地址</button>
+    </view>
+    <view class="weui-cells__tips">请点击“保存二维码”保存二维码到本地，通过微信扫一扫获得申请地址;也可点击“复制链接地址”，将地址粘贴到浏览器或微信中打开申请</view>
+  </view>
+</page>
