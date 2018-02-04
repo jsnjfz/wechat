@@ -1,2 +1,11 @@
-<!--pages/help/help.wxml-->
-<text>pages/help/help.wxml</text>
+<page>
+  <view class="weui-cells weui-cells_after-title">
+    <block wx:for-items="{{datas}}">
+      <navigator hoverClass="weui-cell_active" class="weui-cell weui-cell_access" url="/pages/helpinfo/helpinfo?id={{item.id}}">
+        <view class="weui-cell__bd">{{item.title}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </block>
+  </view>
+  <view class="power">Powered By wannimei</view>
+</page>

@@ -1,1 +1,3 @@
-/* pages/cardlist/list1/list1.wxss */
+@import '../../../style/weui.wxss';
+.logo { width:38px; height: 38px; margin-right: 5px; }
+.logo wx-image { width:38px; height: 38px; }

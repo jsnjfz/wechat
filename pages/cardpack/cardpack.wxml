@@ -1,6 +1,6 @@
 
 <page>
-  <!-- <view class="weui-mask {{animateCss}}"></view>
+   <view class="weui-mask {{animateCss}}"></view>
   <view class="weui-dialog {{animateCss}}">
     <view class="weui-dialog__hd">
       <view class="weui-dialog__title">{{title}}</view>
@@ -15,7 +15,7 @@
         <view bindtap="{{buttonTapped}}" class="weui-dialog__btn weui-dialog__btn_default {{item.type}} {{item.bold?'weui-dialog__btn_bold':''}}" data-index="{{index}}">{{item.text}}</view>
       </block>
     </view>
-  </view> -->
+  </view> 
   <view class="page">
     <scroll-view scrollX="true" class="tags-box">
       <block wx:for-items="{{tags}}">

@@ -1,1 +1,21 @@
-/* pages/bank/bank.wxss */
+@import '../../style/weui.wxss';
+body { background-color: #fff; }
+.theme-head { text-align: center; padding: 20px 20px 12px; }
+.theme-head wx-image { width: 32px; height: 32px; }
+.theme-title { font-size: 18px; }
+.theme-des { width: 100%; font-size: 12px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.space { width: 100%; height: 10px; background-color: #f8f8f8; }
+.card-list { padding: 0 12px; }
+.card-list .no-data { text-align: center; font-size: 14px; color: #b8b8b8; padding: 100px 0; }
+.card-item { display: flex; height: 95px; border-bottom: ",1," solid #dfdfdf; }
+.card-pic { height: 100%; padding: 12.5px 0; }
+.card-pic wx-image { width: 110px; height: 70px; border-radius: 5px; }
+.card-info { height: 100%; padding: 9px 0 9px 8px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+.card-name { font-size: 12px; }
+.card-des { height: 32px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 10px; color: #666; }
+.card-gift { font-size: 10px; color: #9b9a9b; }
+.filter-wp { padding: 12px 12px 0; }
+.filter { padding-bottom: 12px; border-bottom: ",1," solid #dfdfdf; }
+.filter wx-picker { display: inline-block; width: 33.3%; text-align: center; box-sizing: border-box; vertical-align: middle; font-size: 12px; }
+.filter .mid { border-left: ",1," solid #b8b8b8; border-right: ",1," solid #b8b8b8; }
+.picker::after { content: \x27\x27; display: inline-block; vertical-align: middle; margin-left: 6px; width: 0; height: 0; border-style: solid; border-width: 5px 4px 0 4px; border-color: #121212 transparent transparent transparent; }

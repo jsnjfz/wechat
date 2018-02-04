@@ -1,1 +1,3 @@
-/* pages/helpinfo/helpinfo.wxss */
+@import '../../style/weui.wxss';
+body { padding: 20px 12px; box-sizing: border-box; }
+wx-text { text-align: justify; }

@@ -1,2 +1,7 @@
-<!--pages/postcarderror/postcarderror.wxml-->
-<text>pages/postcarderror/postcarderror.wxml</text>
+<page><view class="page"><view class="title">卡信息报错</view><text>{{name}}</text><view class="act-title">{{title}}</view><text>选择错误类型（必选）：</text><form bindsubmit="bindFormSubmit"><radio-group bindchange="radioChange" class="radio-group" name="reason"><label class="radio"><radio value="权益"></radio>权益
+      </label><label class="radio"><radio value="积分"></radio>积分
+      </label><label class="radio"><radio value="年费"></radio>年费
+      </label><label class="radio"><radio value="攻略"></radio>攻略
+      </label><label class="radio"><radio value="卡样"></radio>卡样
+      </label><label class="radio"><radio value="其他"></radio>其他
+      </label></radio-group><text>描述：</text><view class="section"><textarea autoHeight="true" bindblur="" name="des" placeholder="在此描述错误信息告诉我们，非常感谢！"></textarea></view><button formType="submit" type="primary"> 走你 </button></form></view></page>

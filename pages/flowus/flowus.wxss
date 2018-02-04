@@ -1,1 +1,8 @@
-/* pages/flowus/flowus.wxss */
+@import '../../style/weui.wxss';
+body { padding-bottom: 0; background-color: #fff; }
+.head { background-color: #f9f9f9; text-align: center; height: 72px; line-height: 72px; font-size: 20px; }
+wx-image { display: block; margin: 0 auto; width: ",420,"; height: ",420,"; }
+.link { text-align: center; color: #666; }
+.cont { box-sizing: border-box; display: block; width: 100%; padding: 0 12px; color: #666; font-size: 14px; line-height: 1.5; }
+.btns { padding:0 ",30," ",60,"; }
+wx-button { margin: ",30," 0; }

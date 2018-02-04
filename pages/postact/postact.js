@@ -1,66 +1,69 @@
-// pages/postact/postact.js
+var t = require("../../utils/http.js");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    sms: "",
+    loading: !1
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  getClip: function () {
+    var t = this;
+    wx.getClipboardData({
+      success: function (n) {
+        console.log(n.data),
+          t.setData({
+            sms: n.data
+          })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  updateSms: function (t) {
+    this.setData({
+      sms: t.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  reset: function () {
+    this.setData({
+      sms: ""
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  initData: function () { },
+  submit: function () {
+    var n = this;
+    this.setData({
+      loading: !0
+    }),
+      (0, t.post)("/userBankCard/smsAnalysis", {
+        sms: this.data.sms
+      }).then(function (t) {
+        console.log(t),
+          n.setData({
+            loading: !1
+          }),
+          200 == t.code ? "账单已收录" == t.result ? (wx.showToast({
+            title: t.result
+          }), setTimeout(function () {
+            wx.navigateBack({})
+          },
+            600)) : wx.showModal({
+              title: "提示",
+              content: t.result,
+              showCancel: !1,
+              success: function (t) { }
+            }) : wx.showModal({
+              title: "提示",
+              content: t.msg,
+              showCancel: !1,
+              success: function (t) { }
+            })
+      }).
+        catch(function (t) { }),
+      console.log(this.data.sms)
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+  onLoad: function (t) { },
+  onReady: function () { },
+  onShow: function () { },
+  onHide: function () { },
+  onUnload: function () { },
+  onPullDownRefresh: function () { },
+  onReachBottom: function () { },
+  onShareAppMessage: function () { }
 })

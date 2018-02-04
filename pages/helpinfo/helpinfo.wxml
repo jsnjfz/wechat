@@ -1,2 +1,52 @@
-<!--pages/helpinfo/helpinfo.wxml-->
-<text>pages/helpinfo/helpinfo.wxml</text>
+<!-- page-frame.html:941 WXMLRT:./wxParse/wxParse.wxml:template:901:24: Template `wxParse12` not found. -->
+<page>
+  <block wx:for-items="{{richText.nodes}}">
+    <button type="default" size="mini">
+      <block wx:for-items="{{richText.nodes.nodes}}">
+        <button type="default" size="mini">
+          <block wx:for-items="{{richText.nodes.nodes.nodes}}">
+            <button type="default" size="mini">
+              <block wx:for-items="{{richText.nodes.nodes.nodes.nodes}}">
+                <button type="default" size="mini">
+                  <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes}}">
+                    <button type="default" size="mini">
+                      <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                        <button type="default" size="mini">
+                          <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                            <button type="default" size="mini">
+                              <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                <button type="default" size="mini">
+                                  <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                    <button type="default" size="mini">
+                                      <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                        <button type="default" size="mini">
+                                          <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                            <button type="default" size="mini">
+                                              <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                <button type="default" size="mini">
+                                                  <block wx:for-items="{{richText.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                </button>
+                                              </block>
+                                            </button>
+                                          </block>
+                                        </button>
+                                      </block>
+                                    </button>
+                                  </block>
+                                </button>
+                              </block>
+                            </button>
+                          </block>
+                        </button>
+                      </block>
+                    </button>
+                  </block>
+                </button>
+              </block>
+            </button>
+          </block>
+        </button>
+      </block>
+    </button>
+  </block>
+</page>

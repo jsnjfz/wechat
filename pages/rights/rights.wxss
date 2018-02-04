@@ -1,1 +1,9 @@
-/* pages/rights/rights.wxss */
+@import '../../style/weui.wxss';
+body { background-color: #fff; }
+.rights-head { height: 100px; border-bottom: ",1," solid #dfdfdf; padding: 20px 0; text-align: center; }
+.rights-title { color: #f5a523; }
+.rights-head wx-text { font-size: 10px; color: #4a494a; }
+.rights-detail { padding: 0 12px; }
+.rights-item { padding: 15px 0 20px; }
+.rights-item wx-text { font-size: 14px; }
+.entry-list wx-view { color: #000; display: inline-block; padding: 2px 15px; border: ",1," solid #4a494a; font-size: 14px; margin-right: 5px; margin-bottom: 6px; }

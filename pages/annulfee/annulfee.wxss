@@ -1,3 +1,4 @@
+@import '../../style/weui.wxss';
 body { background-color: #fff; }
 .tags-box { padding: 8px 0; white-space: nowrap; background-color: #f8f8f8; }
 .tags-box wx-view { border-radius: 4px; box-shadow: 1px 1px 1px #e2e2e2; color: #a0a0a0; line-height: 28px; display: inline-block; font-size: 14px; padding: 0 12px; background-color: #fff; margin: 0 5px; }

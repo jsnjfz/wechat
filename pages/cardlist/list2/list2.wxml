@@ -1,2 +1,20 @@
-<!--pages/cardlist/list2/list2.wxml-->
-<text>pages/cardlist/list2/list2.wxml</text>
+<page>
+  <view class="weui-cells__title search-title">
+    <view class="">全部</view>
+    <navigator class="search" url="/pages/cardlist/list3/list3?id={{id}}&bid={{id}}&search=1&back={{level}}">
+      <icon type="search" color="#b2b2b2" size="14"></icon>
+      <text>搜索</text>
+    </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <block wx:for-items="{{datas}}">
+      <navigator hoverClass="weui-cell_active" class="weui-cell weui-cell_access" url="/pages/cardlist/list3/list3?level={{level}}&id={{item.id}}&bid={{id}}">
+        <view class="weui-cell__hd logo">
+          <image src="{{item.antImg}}!w38"></image>
+        </view>
+        <view class="weui-cell__bd">{{item.name}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </block>
+  </view>
+</page>

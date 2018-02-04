@@ -218,3 +218,44 @@
     </view>
   </view>
 </page>
+
+
+<!-- <page>
+  <view class="page">
+    <view class="act-item">
+      <view class="img">
+        <image src="undefined"></image>
+      </view>
+      <view class="des">
+        <view class="title"></view>
+        <view class="titlered"></view>
+        <view class="remindTime">
+          <view>-</view>
+          <view></view>
+          <image class="" src="undefined"></image>
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <view bindtap="flow" class="flow nflow "></view>
+    </view>
+    <view class="panel remind ">
+      <view class="title">
+        <text>提醒我</text>
+        <switch bindchange="remindMe" checked="undefined"></switch>
+      </view>
+      <view class="rich-text">提示：关注公众号
+        <text bindtap="alert" class="wankadi">「玩卡帝」</text> 即可在活动前收到通知，不落下一根羊毛哦~</view>
+    </view>
+    <view class="btns">
+      <navigator class="err" url="/pages/posterror/posterror?name=&title=&id=">
+        <image src="undefined"></image>
+        <text>活动信息报错</text>
+      </navigator>
+      <navigator url="/pages/postact/postact">
+        <image src="undefined"></image>
+        <text>我要爆料</text>
+      </navigator>
+    </view>
+  </view>
+</page> -->

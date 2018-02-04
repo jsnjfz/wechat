@@ -1,2 +1,46 @@
-<!--pages/cardlist/list3/list3.wxml-->
-<text>pages/cardlist/list3/list3.wxml</text>
+<page>
+  <view class="weui-mask {{animateCss}}"></view>
+  <view class="weui-dialog {{animateCss}}">
+    <view class="weui-dialog__hd">
+      <view class="weui-dialog__title">{{title}}</view>
+    </view>
+    <view class="weui-dialog__bd">
+      <view class="weui-dialog__content">{{content}}</view>
+      <input bindinput="{{bindinput}}" class="weui-input weui-prompt-input" maxlength="{{maxlength}}" password="{{prompt.password}}" placeholder="{{prompt.placeholder}}" type="{{prompt.fieldtype}}" value="{{prompt.response}}"></input>
+      <view class="surfix">{{surfix}}</view>
+    </view>
+    <view class="weui-dialog__ft {{verticalButtons?'weui-dialog__btns_vertical':''}}">
+      <block wx:for-items="{{buttons}}">
+        <view bindtap="{{buttonTapped}}" class="weui-dialog__btn weui-dialog__btn_default {{item.type}} {{item.bold?'weui-dialog__btn_bold':''}}" data-index="{{index}}">{{item.text}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="weui-search-bar" hidden="!search">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon type="search" size="14" class="weui-icon-search_in-box"></icon>
+        <input bindconfirm="search" confirmType="search" bindinput="inputTyping" class="weui-search-bar__input" focus="{{search}}" placeholder="搜索" type="text" value="{{inputVal}}"></input>
+        <view bindtap="clearInput" class="weui-icon-clear">
+          <icon size="14" type="clear"></icon>
+        </view>
+      </view>
+      <label bindtap="showInput" class="weui-search-bar__label" hidden="{{inputShowed}}">
+        <icon type="search" size="14" class="weui-icon-search"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view bindtap="hideInput" class="weui-search-bar__cancel-btn" hidden="!inputShowed">取消</view>
+  </view>
+  <view class="weui-cells weui-cells_after-title" hidden="datas.length==0">
+    <block wx:for-items="{{datas}}">
+      <view hoverClass="weui-cell_active" class="weui-cell weui-cell_access" data-obj="item" bindtap="pick">
+        <view class="weui-cell__hd logo">
+          <image src="{{item.antImg}}!w38"></image>
+        </view>
+        <view class="weui-cell__bd">{{item.name}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </block>
+  </view>
+  <view bindtap="postcardTap" class="postcard">没有找到卡片？点此提交</view>
+</page>

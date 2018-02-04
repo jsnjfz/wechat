@@ -1,2 +1,34 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<page>
+  <view class="page">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon type="search" size="14" class="weui-icon-search_in-box"></icon>
+          <input focus="true" bindconfirm="search" confirmType="search" bindinput="inputTyping" class="weui-search-bar__input" placeholder="搜索" type="text" value="{{keyword}}"></input>
+          <view bindtap="clearInput" class="weui-icon-clear">
+            <icon size="14" type="clear"></icon>
+          </view>
+        </view>
+      </view>
+      <view class="weui-search-bar__cancel-btn" bindtap="goback">取消</view>
+    </view>
+    <view class="search-panel">
+      <view class="search-list" hidden="searchRes.length>0">
+        <view class="title">热门搜索</view>
+        <block wx:for-items="{{hotwords}}">
+          <view bindtap="search" class="hotwords" data-hotwords="{{item.name}}">{{item.name}}</view>
+        </block>
+      </view>
+      <view class="result-list" hidden="searchRes.length==0">
+        <block wx:for-items="{{searchRes}}">
+          <navigator class="item" url="/pages/cardinfo/cardinfo?id={{item.id}}&bid={{item.bankId}}">
+            <view class="">
+              <image src="{{item.antImg}}"></image>
+            </view>
+            <text class="dot">{{item.name}}</text>
+          </navigator>
+        </block>
+      </view>
+    </view>
+  </view>
+</page>

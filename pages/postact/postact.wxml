@@ -1,2 +1,22 @@
-<!--pages/postact/postact.wxml-->
-<text>pages/postact/postact.wxml</text>
+<page>
+  <view class="page">
+    <view class="title">提交爆料</view>
+    <form bindsubmit="bindFormSubmit">
+      <view class="line">
+        <text>选择银行：</text>
+        <picker value="{{index}}" bindchange="switchBank" rangeKey="name" range="{{banks}}">
+          <view class="picker">{{bankName}}</view>
+        </picker>
+      </view>
+      <view class="line">
+        <text>优惠链接：</text>
+        <input autoFocus="true" name="url" placeholder="请输入活动地址或活动参与路径"></input>
+      </view>
+      <view class="line">
+        <text>爆料理由：</text>
+        <textarea autoHeight="true" bindblur="" name="des" placeholder="在此描述错误信息告诉我们，非常感谢！"></textarea>
+      </view>
+      <button formType="submit" type="primary"> 走你 </button>
+    </form>
+  </view>
+</page>

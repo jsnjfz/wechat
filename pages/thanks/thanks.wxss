@@ -1,1 +1,7 @@
-/* pages/thanks/thanks.wxss */
+@import '../../style/weui.wxss';
+body { background-color: #fff; }
+.head { background-color: #f9f9f9; text-align: center; height: 72px; line-height: 72px; font-size: 20px; }
+.cont { box-sizing: border-box; display: block; width: 100%; padding: 0 12px; text-align: center; color: #666; }
+.cont wx-text { color: #000; }
+.btns { padding:",60," ",30," 0; }
+wx-button { margin: ",30," 0; }

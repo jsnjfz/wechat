@@ -177,3 +177,38 @@
     </view>
   </view>
 </page>
+
+<!-- <page>
+  <view class="page">
+    <view class="brief-info">
+      <image src="undefined"></image>
+      <view class="card-name dot"></view>
+      <view class="des"></view>
+      <view class="basic-info dot">
+        <text></text>
+        <text></text>
+        <text>年费: 元 </text>
+      </view>
+      <navigator class="err" url="/pages/postcarderror/postcarderror?cid=&name="></navigator>
+    </view>
+    <view class="space"></view>
+    <view class="tabs">
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <view class="weui-navbar__slider" style="left: px; transform: translateX(px); -webkit-transform: translateX(px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view hidden="true" class="tab-content">
+            <view class="btn-group">
+              <view hoverClass="active" bindtap="doihave" class="btn1 had">
+                <text></text>
+              </view>
+            </view>
+          </view>
+          <view hidden="true" class="tab-content"></view>
+          <view hidden="true" class="tab-content"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</page> -->

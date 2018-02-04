@@ -1,2 +1,52 @@
-<!--pages/carddetail/carddetail.wxml-->
-<text>pages/carddetail/carddetail.wxml</text>
+<page>
+  <view class="page">
+    <view class="weui-panel">
+      <view class="weui-panel__hd bank-cont">
+        <view class="">
+          <image class="bank-logo" src="undefined"></image>
+        </view>
+        <view class="weui-media-box__bd  bank-info">
+          <text class="bank-name"></text>
+          <view class="bank-detail">
+            <text>额度：￥暂无</text>
+            <text>账:日  还:日</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_appmsg card-cont">
+          <navigator url="" hoverClass="none" class="card-pic">
+            <image class="weui-media-box__thumb" src="undefined"></image>
+          </navigator>
+          <view class="weui-media-box__bd card-detail">
+            <view class="weui-media-box__title card-name"></view>
+            <view class="card-tags"></view>
+            <text class="card-num">**** **** **** </text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title" style="margin-top: 1.17647059em;">
+      <view hoverClass="weui-cell_active" data-obj="undefined" class="weui-cell weui-cell_access" bindtap="goCardInfo">
+        <view class="weui-cell__bd">查看权益</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <view hoverClass="weui-cell_active" data-obj="undefined" class="weui-cell weui-cell_access" bindtap="goToEdit">
+        <view class="weui-cell__bd">编辑卡片</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <navigator hoverClass="weui-cell_active" class="weui-cell weui-cell_access" url="/pages/history/history?id=">
+        <view class="weui-cell__bd">账单记录</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">undefined已还</view>
+      </navigator>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">开启账单提醒</view>
+        <view class="weui-cell__ft">
+          <switch bindchange="toggleRemind" checked="undefined"></switch>
+        </view>
+      </view>
+    </view>
+    <view class="tips">账单提醒：若在出账日三天内没有录入账单 ，将会收到补充账单提醒，关注公众号“玩卡帝”才能收到提醒哦
+    </view>
+  </view>
+</page>

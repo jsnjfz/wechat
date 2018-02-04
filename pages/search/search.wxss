@@ -1,1 +1,11 @@
-/* pages/search/search.wxss */
+@import '../../style/weui.wxss';
+body { background-color: #fff; }
+.weui-search-bar { width: 100%; position: fixed; top: 0; left: 0; z-index: 10; }
+.search-panel { position: relative; }
+.search-list, .result-list { position: absolute; left: 0; top: 48px; width: 100%; background-color: #fff; }
+.search-list .title { height: 36px; background-color: #fafafa; color: #8d8d8d; font-size: 14px; line-height: 36px; padding-left: 20px; }
+.search-list .hotwords { height: 36px; font-size: 14px; line-height: 36px; padding-left: 20px; border-bottom: ",1," solid #ddd; }
+.result-list { padding-bottom: 30px; }
+.result-list .item { padding: 0 12px; height: 42px; border-bottom: ",1," solid #ddd; display: flex; align-items: center; }
+.result-list wx-view { margin-right: 8px; display: flex; align-items: center; }
+.result-list wx-image { width: 47.5px; height: 30px; border-radius: ",6,"; }

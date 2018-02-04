@@ -1,2 +1,65 @@
-<!--pages/tip/tip.wxml-->
-<text>pages/tip/tip.wxml</text>
+<!-- page-frame.html:941 WXMLRT:./wxParse/wxParse.wxml:template:901:24: Template `wxParse12` not found. -->
+<page>
+  <view class="page">
+    <view class="title">{{tip.title}}</view>
+    <view class="rich-text">
+      <block wx:for-items="{{article.nodes}}">
+        <button type="default" size="mini">
+          <block wx:for-items="{{article.nodes.nodes}}">
+            <button type="default" size="mini">
+              <block wx:for-items="{{article.nodes.nodes.nodes}}">
+                <button type="default" size="mini">
+                  <block wx:for-items="{{article.nodes.nodes.nodes.nodes}}">
+                    <button type="default" size="mini">
+                      <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes}}">
+                        <button type="default" size="mini">
+                          <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                            <button type="default" size="mini">
+                              <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                <button type="default" size="mini">
+                                  <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                    <button type="default" size="mini">
+                                      <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                        <button type="default" size="mini">
+                                          <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                            <button type="default" size="mini">
+                                              <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                <button type="default" size="mini">
+                                                  <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                    <button type="default" size="mini">
+                                                      <block wx:for-items="{{article.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                    </button>
+                                                  </block>
+                                                </button>
+                                              </block>
+                                            </button>
+                                          </block>
+                                        </button>
+                                      </block>
+                                    </button>
+                                  </block>
+                                </button>
+                              </block>
+                            </button>
+                          </block>
+                        </button>
+                      </block>
+                    </button>
+                  </block>
+                </button>
+              </block>
+            </button>
+          </block>
+        </button>
+      </block>
+    </view>
+  </view>
+</page>
+
+
+<!-- <page>
+  <view class="page">
+    <view class="title"></view>
+    <view class="rich-text"></view>
+  </view>
+</page> -->

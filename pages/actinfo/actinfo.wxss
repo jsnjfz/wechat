@@ -1,3 +1,4 @@
+@import '../../style/weui.wxss';
 body { background-color: #f8f8f8; padding-bottom: 0; }
 .act-item { padding: 9px 12px; background-color: #fff; display: flex; position: relative; text-align: justify; }
 .act-list { background-color: #f8f8f8; padding: 10px 0; }

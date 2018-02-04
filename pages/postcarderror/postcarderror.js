@@ -1,66 +1,62 @@
-// pages/postcarderror/postcarderror.js
+var t = require("../../utils/http.js");
+require("../../utils/util");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    bankName: "请选择 >",
+    bankId: ""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  getBanks: function () {
+    var n = this; (0, t.get)("/dictBank/listBank").then(function (t) {
+      200 == t.code && n.setData({
+        banks: t.result
+      })
+    }).
+      catch(function (t) { })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  switchBank: function (t) {
+    console.log(t.detail.value),
+      this.setData({
+        bankName: this.data.banks[t.detail.value].name,
+        bankId: this.data.banks[t.detail.value].id
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  bindFormSubmit: function (n) {
+    console.log(n),
+      (0, t.post)("/bankActivity/submitNewActivity", {
+        bankId: this.data.bankId,
+        bankName: this.data.bankName,
+        url: n.detail.value.url,
+        des: n.detail.value.des
+      }).then(function (t) {
+        200 == t.code ? (wx.showToast({
+          title: "感谢反馈！",
+          icon: "success",
+          duration: 2e3
+        }), setTimeout(function () {
+          wx.navigateBack()
+        },
+          1e3)) : wx.showToast({
+            title: t.msg,
+            icon: "success",
+            duration: 1e3
+          })
+      }).
+        catch(function (t) {
+          wx.showToast({
+            title: "提交失败！",
+            icon: "success",
+            duration: 2e3
+          })
+        })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  onLoad: function (t) {
+    this.getBanks()
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+  onReady: function () { },
+  onShow: function () { },
+  onHide: function () { },
+  onUnload: function () { },
+  onPullDownRefresh: function () { },
+  onReachBottom: function () { },
+  onShareAppMessage: function () { }
 })

@@ -1,5 +1,5 @@
-
-  <!--<view class="weui-mask {{animateCss}}"></view>
+<page>
+  <view class="weui-mask {{animateCss}}"></view>
   <view class="weui-dialog {{animateCss}}">
     <view class="weui-dialog__hd">
       <view class="weui-dialog__title">{{title}}</view>
@@ -14,7 +14,7 @@
         <view bindtap="{{buttonTapped}}" class="weui-dialog__btn weui-dialog__btn_default {{item.type}} {{item.bold?'weui-dialog__btn_bold':''}}" data-index="{{index}}">{{item.text}}</view>
       </block>
     </view>
-  </view>-->
+  </view>
   <view class="page">
     <view class="bill-tags">
       <view class="tabs">
@@ -76,7 +76,7 @@
             <view class="weui-cell__bd weui-cell_primary">
               <view>还款记录</view>
             </view>
-            <!--<view class="weui-cell__ft weui-cell__ft_in-access">{{recentPay==?"":recentPay+"已还"}}</view>-->
+            <!-- <view class="weui-cell__ft weui-cell__ft_in-access">{{recentPay==?'':'recentPay+已还'}}</view> -->
             <view class="weui-cell__ft weui-cell__ft_in-access">已还</view>
           </navigator>
         </view>
@@ -111,3 +111,4 @@
       </view>
     </view>
   </view>
+</page>

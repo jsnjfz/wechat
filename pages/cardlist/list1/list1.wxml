@@ -1,2 +1,14 @@
-<!--pages/cardlist/list1/list1.wxml-->
-<text>pages/cardlist/list1/list1.wxml</text>
+<page>
+  <view class="weui-cells__title">全部</view>
+  <view class="weui-cells weui-cells_after-title">
+    <block wx:for-items="{{datas}}">
+      <navigator hoverClass="weui-cell_active" class="weui-cell weui-cell_access" url="/pages/cardlist/list2/list2?level=1&id={{item.id}}">
+        <view class="weui-cell__hd logo">
+          <image src="{{item.antIcon}}!w38"></image>
+        </view>
+        <view class="weui-cell__bd">{{item.name}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </block>
+  </view>
+</page>

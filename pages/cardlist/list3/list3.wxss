@@ -1,1 +1,4 @@
-/* pages/cardlist/list3/list3.wxss */
+@import '../../../style/weui.wxss';
+.logo { width: 38px; height: 24px; margin-right: 5px; }
+.logo wx-image { width: 38px; height: 24px; border-radius: 2px; }
+.postcard { text-align: center; font-size: 14px; color: #999; padding:8px 0; }

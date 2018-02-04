@@ -1,2 +1,148 @@
-<!--pages/rights/rights.wxml-->
-<text>pages/rights/rights.wxml</text>
+<!-- page-frame.html:941 WXMLRT:./wxParse/wxParse.wxml:template:901:24: Template `wxParse12` not found. -->
+<page>
+  <view class="page">
+    <view class="rights-head">
+      <view class="rights-title">{{rights.items.name}}</view>
+      <text>rights.items.worth+rights.items.unit</text>
+    </view>
+    <view class="rights-detail">
+      <view class="rights-item" hidden="brief.nodes.length==0">
+        <text>权益简介</text>
+        <view class="rich-text">
+          <block wx:for-items="{{brief.nodes}}">
+            <button type="default" size="mini">
+              <block wx:for-items="{{brief.nodes.nodes}}">
+                <button type="default" size="mini">
+                  <block wx:for-items="{{brief.nodes.nodes.nodes}}">
+                    <button type="default" size="mini">
+                      <block wx:for-items="{{brief.nodes.nodes.nodes.nodes}}">
+                        <button type="default" size="mini">
+                          <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes}}">
+                            <button type="default" size="mini">
+                              <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                <button type="default" size="mini">
+                                  <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                    <button type="default" size="mini">
+                                      <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                        <button type="default" size="mini">
+                                          <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                            <button type="default" size="mini">
+                                              <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                <button type="default" size="mini">
+                                                  <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                    <button type="default" size="mini">
+                                                      <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                        <button type="default" size="mini">
+                                                          <block wx:for-items="{{brief.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                        </button>
+                                                      </block>
+                                                    </button>
+                                                  </block>
+                                                </button>
+                                              </block>
+                                            </button>
+                                          </block>
+                                        </button>
+                                      </block>
+                                    </button>
+                                  </block>
+                                </button>
+                              </block>
+                            </button>
+                          </block>
+                        </button>
+                      </block>
+                    </button>
+                  </block>
+                </button>
+              </block>
+            </button>
+          </block>
+        </view>
+      </view>
+      <view class="rights-item" hidden="intro.nodes.length==0">
+        <text>权益介绍</text>
+        <block wx:for-items="{{intro.nodes}}">
+          <button type="default" size="mini">
+            <block wx:for-items="{{intro.nodes.nodes}}">
+              <button type="default" size="mini">
+                <block wx:for-items="{{intro.nodes.nodes.nodes}}">
+                  <button type="default" size="mini">
+                    <block wx:for-items="{{intro.nodes.nodes.nodes.nodes}}">
+                      <button type="default" size="mini">
+                        <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes}}">
+                          <button type="default" size="mini">
+                            <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                              <button type="default" size="mini">
+                                <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                  <button type="default" size="mini">
+                                    <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                      <button type="default" size="mini">
+                                        <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                          <button type="default" size="mini">
+                                            <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                              <button type="default" size="mini">
+                                                <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                  <button type="default" size="mini">
+                                                    <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}">
+                                                      <button type="default" size="mini">
+                                                        <block wx:for-items="{{intro.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes.nodes}}"></block>
+                                                      </button>
+                                                    </block>
+                                                  </button>
+                                                </block>
+                                              </button>
+                                            </block>
+                                          </button>
+                                        </block>
+                                      </button>
+                                    </block>
+                                  </button>
+                                </block>
+                              </button>
+                            </block>
+                          </button>
+                        </block>
+                      </button>
+                    </block>
+                  </button>
+                </block>
+              </button>
+            </block>
+          </button>
+        </block>
+      </view>
+      <view class="rights-item" hidden="rights.linkList.length==0">
+        <text>相关入口</text>
+        <view class="entry-list">
+          <block wx:for-items="{{rights.linkList}}">
+            <view bindtap="copyUrl" data-url="{{item.url}}">{{item.name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</page>
+
+
+<!-- <page>
+  <view class="page">
+    <view class="rights-head">
+      <view class="rights-title"></view>
+      <text>NaN</text>
+    </view>
+    <view class="rights-detail">
+      <view class="rights-item" hidden="false">
+        <text>权益简介</text>
+        <view class="rich-text"></view>
+      </view>
+      <view class="rights-item" hidden="false">
+        <text>权益介绍</text>
+      </view>
+      <view class="rights-item" hidden="false">
+        <text>相关入口</text>
+        <view class="entry-list"></view>
+      </view>
+    </view>
+  </view>
+</page> -->

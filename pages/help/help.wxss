@@ -1,1 +1,2 @@
-/* pages/help/help.wxss */
+@import '../../style/weui.wxss';
+.power { position: absolute; width: 100%; height: 20px; bottom: 20px; text-align: center; font-size: 10px; color: #666; }

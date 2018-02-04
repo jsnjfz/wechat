@@ -1,66 +1,46 @@
-// pages/flowus/flowus.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    img: "https://pic.wankadi.com/bank/fee6dd40f76c45509d4b6ba30a272d8a.jpg"
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  save: function () {
+    wx.showLoading({
+      title: "下载中..."
+    });
+    wx.downloadFile({
+      url: this.data.img,
+      success: function (o) {
+        var n = o.tempFilePath;
+        wx.saveImageToPhotosAlbum ? wx.saveImageToPhotosAlbum({
+          filePath: n,
+          success: function () {
+            wx.showToast({
+              title: "保存成功",
+              icon: "success"
+            })
+          },
+          fail: function () {
+            wx.hideLoading(),
+              wx.showModal({
+                title: "提示",
+                content: "您拒绝了保存图片"
+              })
+          }
+        }) : wx.showModal({
+          title: "提示",
+          content: "您的微信版本过低，请升级体验本功能"
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  ok: function () {
+    wx.navigateBack()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+  onLoad: function (o) { },
+  onReady: function () { },
+  onShow: function () { },
+  onHide: function () { },
+  onUnload: function () { },
+  onPullDownRefresh: function () { },
+  onReachBottom: function () { },
+  onShareAppMessage: function () { }
 })

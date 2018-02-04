@@ -1,66 +1,30 @@
-// pages/thanks/thanks.js
+var n = require("../../utils/http.js");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
+  data: {},
+  flow: function () {
+    wx.redirectTo({
+      url: "/pages/flowus/flowus"
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  ok: function () {
+    wx.navigateBack()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  initData: function () {
+    var t = this; (0, n.get)("/isSubscribe").then(function (n) {
+      200 == n.code && t.setData({
+        isSubscribe: n.result
+      })
+    }).
+      catch(function (n) { })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  onLoad: function (n) {
+    this.initData()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+  onReady: function () { },
+  onShow: function () { },
+  onHide: function () { },
+  onUnload: function () { },
+  onPullDownRefresh: function () { },
+  onReachBottom: function () { },
+  onShareAppMessage: function () { }
 })

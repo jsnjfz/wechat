@@ -1,2 +1,14 @@
-<!--pages/thanks/thanks.wxml-->
-<text>pages/thanks/thanks.wxml</text>
+<page>
+  <view class="page">
+    <view class="head">非常感谢!</view>
+    <text class="cont">
+    我们已经收到您的反馈信息，将会通过消息推送的方式告知您处理结果。
+
+    请关注我们的公众号“<text>玩卡帝</text>” 以正常获得推送信息 我们会认真回复您的每一条反馈。
+    </text>
+    <view class="btns">
+      <button bindtap="ok" type="plain">好的</button>
+      <button bindtap="flow" type="primary">去关注</button>
+    </view>
+  </view>
+</page>

@@ -1,1 +1,9 @@
-/* pages/postact/postact.wxss */
+@import '../../style/weui.wxss';
+body { background-color: #fff; }
+.page { padding: 0 12px; }
+.line { padding-bottom: 10px; }
+.title { font-size: 18px; color: #1aad19; text-align: center; padding: 20px 0; }
+wx-picker { display: inline-block; color: #9b9b9b; }
+wx-input { border: 1px solid #d9d9d9; border-radius: 5px; font-size: 12px; color: #9b9b9b; padding: 5px; }
+wx-textarea { width: 100%; min-height: 50px; padding: 5px 0; border: 1px solid #d9d9d9; border-radius: 5px; text-align: justify; font-size: 12px; color: #9b9b9b; }
+wx-button { margin-top: 20px; width: 30%; }
