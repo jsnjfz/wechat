@@ -12,7 +12,7 @@
             <view class="weui-label">卡号</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" bindinput="getNum" maxlength="4" placeholder="请输入卡号后四位" type="number"></input>
+            <input class="weui-input" bindinput="getNum" maxlength="4" placeholder="请输入卡号" type="number"></input>
           </view>
         </view>
         <navigator class="weui-cell" hoverClass="weui-cell_active" url="/pages/cardlist/list1/list1">

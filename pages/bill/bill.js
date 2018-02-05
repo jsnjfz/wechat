@@ -11,7 +11,45 @@ require("../../img/base64")
 Page({
   data: {
     activeIndex: 0,
-    ndatas: [],
+    ndatas: [{
+      "cardStatementList": [{
+        "cardName": "招商英雄联盟信用卡（LOGO卡）",
+        "cardNo": "",
+        "id": "3a53019016dc41419ef61bded2db7925",
+        "repaymentAmount": 66.00,
+        "repaymentAmountFact": 0.00,
+        "repaymentStates": 1,
+        "repaymentTime": null,
+        "surplusAmount": 66.00
+      }],
+      "dictBank": {
+        "antIcon": "https://pic.wankadi.com/bank/984c6483417a4a5fa88008cf47e4f1d7.png",
+        "cardNo": "1234",
+        "difDay": "15天",
+        "name": "招商银行",
+        "repaymentDate": "02/20",
+        "totalAmount": 66.00
+      }
+    }, {
+      "cardStatementList": [{
+        "cardName": "浦发新玛特联名VISA金",
+        "cardNo": "",
+        "id": "b6dec3dbe69e40c2b413c11602ade2cb",
+        "repaymentAmount": 333.00,
+        "repaymentAmountFact": 0.00,
+        "repaymentStates": 1,
+        "repaymentTime": null,
+        "surplusAmount": 333.00
+      }],
+      "dictBank": {
+        "antIcon": "https://pic.wankadi.com/bank/52fd54f66a11438d932a1609985e360c.png",
+        "cardNo": "8888",
+        "difDay": "15天",
+        "name": "浦发银行",
+        "repaymentDate": "02/20",
+        "totalAmount": 333.00
+      }
+    }],
     pdatas: [],
     obj: {},
     recentPay: ""
@@ -73,78 +111,78 @@ Page({
     })
   },
   notPayData: function () {
-    var t = this; (0, a.get)("/creditCardStatement/listStatement/1").then(function (a) {
-      200 == a.code && (a.result.records.map(function (t) {
-      - 1 != t.dictBank.difDay.indexOf("到期") || "3天" == t.dictBank.difDay ? t.color = "orange" : -1 != t.dictBank.difDay.indexOf("逾期") ? t.color = "red" : t.color = "black"
-      }), t.setData({
-        ndatas: a.result.records
-      }))
-    }).
-      catch(function (t) { })
+    // var t = this; (0, a.get)("/creditCardStatement/listStatement/1").then(function (a) {
+    //   200 == a.code && (a.result.records.map(function (t) {
+    //   - 1 != t.dictBank.difDay.indexOf("到期") || "3天" == t.dictBank.difDay ? t.color = "orange" : -1 != t.dictBank.difDay.indexOf("逾期") ? t.color = "red" : t.color = "black"
+    //   }), t.setData({
+    //     ndatas: a.result.records
+    //   }))
+    // }).
+    //   catch(function (t) { })
   },
   payedData: function () {
-    var t = this; (0, a.get)("/repaymentHistory/listRepayHistoryPage/1").then(function (a) {
-      200 == a.code && t.setData({
-        pdatas: a.result.records,
-        recentPay: a.result.condition.repayHistoryByRecent
-      })
-    }).
-      catch(function (t) { })
+    // var t = this; (0, a.get)("/repaymentHistory/listRepayHistoryPage/1").then(function (a) {
+    //   200 == a.code && t.setData({
+    //     pdatas: a.result.records,
+    //     recentPay: a.result.condition.repayHistoryByRecent
+    //   })
+    // }).
+    //   catch(function (t) { })
   },
   payBack: function (t) {
-    var e = this,
-      n = this.data; (0, a.post)("/creditCardStatement/repayment", {
-        id: n.obj.id,
-        amount: t
-      }).then(function (t) {
-        200 == t.code && (e.notPayData(), wx.showToast({
-          title: t.msg,
-          icon: "success"
-        }))
-      })
+    // var e = this,
+    //   n = this.data; (0, a.post)("/creditCardStatement/repayment", {
+    //     id: n.obj.id,
+    //     amount: t
+    //   }).then(function (t) {
+    //     200 == t.code && (e.notPayData(), wx.showToast({
+    //       title: t.msg,
+    //       icon: "success"
+    //     }))
+    //   })
   },
   payPart: function () {
-    var a = this,
-      e = this.data.obj;
-    t.$wuxDialog.prompt({
-      title: "标记已还部分",
-      content: "应还：" + e.repaymentAmount + "，已还：" + e.repaymentAmountFact + "，待还:" + e.surplusAmount,
-      fieldtype: "digit",
-      maxlength: 36,
-      onConfirm: function (t) {
-        var e = a.data.$wux.dialog.prompt.response;
-        a.payBack(e)
-      }
-    })
+    // var a = this,
+    //   e = this.data.obj;
+    // t.$wuxDialog.prompt({
+    //   title: "标记已还部分",
+    //   content: "应还：" + e.repaymentAmount + "，已还：" + e.repaymentAmountFact + "，待还:" + e.surplusAmount,
+    //   fieldtype: "digit",
+    //   maxlength: 36,
+    //   onConfirm: function (t) {
+    //     var e = a.data.$wux.dialog.prompt.response;
+    //     a.payBack(e)
+    //   }
+    // })
   },
   editBill: function () {
-    var e = this,
-      n = this.data;
-    t.$wuxDialog.prompt({
-      title: "编辑账单金额",
-      content: " ",
-      fieldtype: "digit",
-      maxlength: 36,
-      onConfirm: function (t) {
-        var o = e.data.$wux.dialog.prompt.response; (0, a.put)("/creditCardStatement/statement", {
-          id: n.obj.id,
-          amount: o
-        }).then(function (t) {
-          200 == t.code && (e.notPayData(), wx.showToast({
-            title: t.msg,
-            icon: "success"
-          }))
-        })
-      }
-    })
+    // var e = this,
+    //   n = this.data;
+    // t.$wuxDialog.prompt({
+    //   title: "编辑账单金额",
+    //   content: " ",
+    //   fieldtype: "digit",
+    //   maxlength: 36,
+    //   onConfirm: function (t) {
+    //     var o = e.data.$wux.dialog.prompt.response; (0, a.put)("/creditCardStatement/statement", {
+    //       id: n.obj.id,
+    //       amount: o
+    //     }).then(function (t) {
+    //       200 == t.code && (e.notPayData(), wx.showToast({
+    //         title: t.msg,
+    //         icon: "success"
+    //       }))
+    //     })
+    //   }
+    // })
   },
   delBill: function (t) {
-    var e = this; (0, a.del)("/creditCardStatement/statement/" + t).then(function (t) {
-      200 == t.code && (e.notPayData(), e.payedData(), wx.showToast({
-        title: t.msg,
-        icon: "success"
-      }))
-    })
+    // var e = this; (0, a.del)("/creditCardStatement/statement/" + t).then(function (t) {
+    //   200 == t.code && (e.notPayData(), e.payedData(), wx.showToast({
+    //     title: t.msg,
+    //     icon: "success"
+    //   }))
+    // })
   },
   add: function () {
     wx.showActionSheet({
@@ -169,7 +207,7 @@ Page({
       a.notPayData(),
         a.payedData()
     },
-      1e3)
+      )
   },
   onReady: function () { },
   onShow: function () {

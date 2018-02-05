@@ -5,31 +5,98 @@ var t = require("../../utils/http.js"),
   
 Page({
   data: {
-    datas: [],
-    activeIndex: "all"
-  },
-  initData: function () {
-    var a = this; (0, t.get)("/userBankCard/listCard/" + this.data.activeIndex + "/1").then(function (t) {
-      wx.stopPullDownRefresh(),
-        a.setData({
-          datas: t.result.records
-        }),
-        e.hideLoading()
-    }).
-      catch(function (t) { })
-  },
-  getTags: function () {
-    var a = this; (0, t.get)("/userBankCardPacket/listPacket").then(function (t) {
-      var n = {
+    // datas: [],
+    datas: [
+      {
+        "dictBank": {
+          "antIcon": "https://pic.wankadi.com/bank/984c6483417a4a5fa88008cf47e4f1d7.png",
+          "cardNum": 1,
+          "interestHliDay": 15,
+          "name": "招商银行",
+          "repaymentDate": 20,
+          "statementDate": 10,
+          "totalAmount": 666
+        },
+        "userBankVOList": [
+          {
+            "bid": 12,
+            "cardNo": "1234",
+            "cid": 92,
+            "des": "",
+            "id": "3797d849c3144ebb8e13cbf0c557cbde",
+            "level": "普卡",
+            "logo": "https://pic.wankadi.com/bank/b86abbc3dd564370ba6233eef6cb7fc1.jpg",
+            "name": "招商英雄联盟信用卡（LOGO卡）",
+            "org": "银联",
+            "org2": "",
+            "packetId": 0,
+            "packetName": "",
+            "remind": 0,
+            "repaymentDate": 20,
+            "statementDate": 10
+          }
+        ]
+      },
+      {
+        "dictBank": {
+          "antIcon": "https://pic.wankadi.com/bank/52fd54f66a11438d932a1609985e360c.png",
+          "cardNum": 1,
+          "interestHliDay": 15,
+          "name": "浦发银行",
+          "repaymentDate": 20,
+          "statementDate": 10,
+          "totalAmount": 3456
+        },
+        "userBankVOList": [
+          {
+            "bid": 23,
+            "cardNo": "8888",
+            "cid": 2652,
+            "des": "",
+            "id": "960dd87561fd4435ae911b4778a6fdfc",
+            "level": "金卡",
+            "logo": "https://pic.wankadi.com/bank/71de03c991e24dc09f770097d59ee3aa.jpg",
+            "name": "浦发新玛特联名VISA金",
+            "org": "银联",
+            "org2": "VISA",
+            "packetId": 0,
+            "packetName": "",
+            "remind": 0,
+            "repaymentDate": 20,
+            "statementDate": 10
+          }
+        ]
+      }
+    ],
+    activeIndex: "all",
+    tags: [{
         id: "all",
         name: "全部"
-      };
-      t.result.unshift(n),
-        a.setData({
-          tags: t.result
-        })
-    }).
-      catch(function (t) { })
+    }, { "id": 874, "name": "666", "states": 1 }]
+  },
+  initData: function () {
+  // /userBankCard/listCard/all/1
+  //   var a = this; (0, t.get)("/userBankCard/listCard/" + this.data.activeIndex + "/1").then(function (t) {
+  //     wx.stopPullDownRefresh(),
+  //       a.setData({
+  //         datas: t.result.records
+  //       }),
+  //       e.hideLoading()
+  //   }).
+  //     catch(function (t) { })
+  },
+  getTags: function () {
+    // var a = this; (0, t.get)("/userBankCardPacket/listPacket").then(function (t) {
+    //   var n = {
+    //     id: "all",
+    //     name: "全部"
+    //   };
+    //   t.result.unshift(n),
+    //     a.setData({
+    //       tags: t.result
+    //     })
+    // }).
+    //   catch(function (t) { })
   },
   goCardInfo: function (t) {
     console.log(t);
@@ -86,7 +153,7 @@ Page({
     })
   },
   onLoad: function (t) {
-    e.showLoading(),
+    // e.showLoading(),
       this.setData({
         bell: n.bell
       })
