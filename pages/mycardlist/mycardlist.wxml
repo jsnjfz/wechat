@@ -3,8 +3,8 @@
     <block wx:for-items="{{datas}}">
       <view class="weui-cells__title">{{item.dictBank.name}}</view>
       <view class="weui-cells weui-cells_after-title">
-        <block wx:for-items="{{datas.userBankVOList}}">
-          <view hoverClass="weui-cell_active" class="weui-cell weui-cell_access" data-obj="item" bindtap="pick">
+        <block wx:for-items="{{item.userBankVOList}}">
+          <view hoverClass="weui-cell_active" class="weui-cell weui-cell_access" data-obj="{{item}}" bindtap="pick">
             <view class="weui-cell__hd logo">
               <image src="{{item.logo}}"></image>
             </view>

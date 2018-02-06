@@ -38,7 +38,7 @@
           </view>
         </view>
         <view class="weui-panel__bd">
-          <block wx:for-items="{{datas.userBankVOList}}">
+          <block wx:for-items="{{item.userBankVOList}}">
             <view class="weui-media-box weui-media-box_appmsg card-cont">
               <view class="card-pic" data-obj="item" bindtap="goCardInfo">
                 <image class="weui-media-box__thumb" src="{{item.logo}}!w38"></image>

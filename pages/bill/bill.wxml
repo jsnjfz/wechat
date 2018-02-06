@@ -28,7 +28,8 @@
       <view bindtap="add" class="addbill">账单</view>
     </view>
     <view class="panel">
-      <view class="weui-tab__content" hidden="activeIndex!=0">
+      <!-- <view class="weui-tab__content" hidden="activeIndex!=0"> -->
+      <view class="weui-tab__content" >
         <block wx:for-items="{{ndatas}}">
           <view class="weui-panel">
             <view class="weui-panel__hd bank-cont">

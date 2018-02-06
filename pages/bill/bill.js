@@ -199,9 +199,9 @@ Page({
     })
   },
   onLoad: function (t) {
-    this.setData({
-      bill: e.bill
-    });
+    // this.setData({
+    //   bill: e.bill
+    // });
     var a = this;
     setTimeout(function () {
       a.notPayData(),
